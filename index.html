@@ -576,9 +576,9 @@
 
     try {
       // Step 1: get game data
-      const dataRes = await fetch('https://api.anthropic.com/v1/messages', {
+      const dataRes = await fetch('/.netlify/functions/proxy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
@@ -602,9 +602,9 @@ Format: each line starts with "MIKE:" or "SARAH:" — nothing else.
 Rules: punchy open, weave in stats naturally, 2-3 standout players, close with tonight's game tease. Under 380 words. No stage directions, no headers.`
         : `Write a "Red Sox Daily" two-host podcast dialogue between MIKE (play-by-play) and SARAH (color commentator) about the most recent Red Sox game. Use real recent stats. Each line: "MIKE:" or "SARAH:". Under 380 words.`;
 
-      const scriptRes = await fetch('https://api.anthropic.com/v1/messages', {
+      const scriptRes = await fetch('/.netlify/functions/proxy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
